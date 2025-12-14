@@ -1,5 +1,5 @@
-#ifndef CUSTOMEXCEPTIONS_HPP
-#define CUSTOMEXCEPTIONS_HPP
+#ifndef ONLINEMARKETPLACEEXCEPTIONS_HPP
+#define ONLINEMARKETPLACEEXCEPTIONS_HPP
 
 #include <stdexcept>
 #include <string>
@@ -23,8 +23,6 @@ class ProductIdNotFound : public OnlineMarketplaceExceptions {
     public:
         ProductIdNotFound(const std::string& msg) : OnlineMarketplaceExceptions { msg } {}
 };
-
-
 
 class InsufficientFunds : public OnlineMarketplaceExceptions {
     public:
