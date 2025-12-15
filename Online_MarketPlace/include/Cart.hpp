@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <memory>
+
+#include "../../Banking_System/include/Bank.hpp"
+#include "../../Banking_System/include/BankExceptions.hpp"
 #include "Product.hpp"
 #include "OnlineMarketplace.hpp"
 #include "User.hpp"
@@ -26,7 +29,7 @@ class Cart {
         double getTotalPriceOfCart() const;
         void displayCart() const;
 
-        void purchaseCart();
+        void purchaseCart(Bank& bank);
         void cleanCart();
 
         // friend std::ostream& operator<<(std::ostream& ostr, const ShoppingList& src);

@@ -4,6 +4,7 @@
 #include <memory>
 #include <vector>
 #include <string>
+
 #include "BankAccount.hpp"
 #include "BankExceptions.hpp"
 #include "CheckingAccount.hpp"
@@ -19,12 +20,14 @@ class Bank {
 
         void transfer(const std::string& cardNumber1, const std::string& cardNumber2, double amount);
 
+        void findCardNumber(const std::string& cardNumber) const;
+
         void display() const;
 
         // void menu();
-        
+
     private:
-        BankAccount* findCardNumber(const std::string& cardNumber);
+        BankAccount* findCardAccount(const std::string& cardNumber) const;
 
         std::vector<std::unique_ptr<BankAccount>> m_bankAccounts;
 };

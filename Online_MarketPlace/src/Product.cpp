@@ -1,5 +1,4 @@
 #include "../include/Product.hpp"
-#include "../include/OnlineMarketplaceExceptions.hpp"
 
 size_t Product::m_nextId = 0;
 
@@ -13,7 +12,7 @@ std::string Product::categoryToString(Category category) const {
     return "None";
 }
 
-Product::Product(const std::string& name, size_t price, Category category) {
+Product::Product(const std::string& name, double price, Category category) {
     try {
         setName(name);
         setPrice(price);

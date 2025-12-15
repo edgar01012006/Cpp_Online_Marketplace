@@ -1,21 +1,12 @@
 #include "../include/Bank.hpp"
 
-BankAccount* Bank::findCardNumber(const std::string& cardNumber) {
-    for (auto& bankAccount: m_bankAccounts) {
-        if (bankAccount->getCardNumber() == cardNumber) {
-            return bankAccount.get();
-        }
-    }
-    throw AccountNotFound("Account not found");
-}
-
 void Bank::withdraw(const std::string& cardNumber, double amount) {
-    BankAccount* bankAccount = findCardNumber(cardNumber);
+    BankAccount* bankAccount = findCardAccount(cardNumber);
     bankAccount->withdraw(amount);
 }
 
 void Bank::deposit(const std::string& cardNumber, double amount) {
-    BankAccount* bankAccount = findCardNumber(cardNumber);
+    BankAccount* bankAccount = findCardAccount(cardNumber);
     bankAccount->deposit(amount);
 }
 
@@ -28,10 +19,28 @@ void Bank::createSavingsAccount(const std::string& name) {
 }
 
 void Bank::transfer(const std::string& cardNumber1, const std::string& cardNumber2, double amount) {
-    BankAccount* bankAccount1 = findCardNumber(cardNumber1);
-    BankAccount* bankAccount2 = findCardNumber(cardNumber2);
+    BankAccount* bankAccount1 = findCardAccount(cardNumber1);
+    BankAccount* bankAccount2 = findCardAccount(cardNumber2);
     bankAccount1->withdraw(amount);
     bankAccount2->deposit(amount);
+}
+
+BankAccount* Bank::findCardAccount(const std::string& cardNumber) const {
+    for (auto& bankAccount: m_bankAccounts) {
+        if (bankAccount->getCardNumber() == cardNumber) {
+            return bankAccount.get();
+        }
+    }
+    throw AccountNotFound("Account not found");
+}
+
+void Bank::findCardNumber(const std::string& cardNumber) const {
+    for (auto& bankAccount: m_bankAccounts) {
+        if (bankAccount->getCardNumber() == cardNumber) {
+            return;
+        }
+    }
+    throw CardNumberNotFound("Card Number not found");
 }
 
 void Bank::display() const {

@@ -50,15 +50,8 @@ void Cart::displayCart() const {
     }
 }
 
-void Cart::purchaseCart() {
-    // in future we can add a bank account for our OnlineMarketplace
-    // where we will pass the amount to our bank account(OnlineMarketPlace)
-    double totalPriceSL = getTotalPriceOf();
-    if (totalPriceSL > user.getBalance()) {
-        throw InsufficientFunds("Insufficient funds");
-    }
-    user.withdraw(totalPriceSL);
-    cleanCart();
+void Cart::purchaseCart(Bank& bank) {
+    
 }
 
 void Cart::cleanCart() {

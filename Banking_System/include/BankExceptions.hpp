@@ -24,4 +24,9 @@ class NegativeAmount : public BankExceptions {
         NegativeAmount(const std::string& message) : BankExceptions(message) {}
 };
 
+class CardNumberNotFound : public BankExceptions {
+    public:
+        CardNumberNotFound(const std::string& message) : BankExceptions(message) {}
+};
+
 #endif

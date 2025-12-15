@@ -4,6 +4,8 @@
 #include <iostream>
 #include <string>
 
+#include "OnlineMarketplaceExceptions.hpp"
+
 class Product {
     public:
         enum class Category { 
@@ -22,7 +24,7 @@ class Product {
         std::string categoryToString(Category category) const;
 
     public:
-        Product(const std::string& name, size_t price, Category category);
+        Product(const std::string& name, double price, Category category);
 
         void setName(const std::string& name);
         void setPrice(double price);

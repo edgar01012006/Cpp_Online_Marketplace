@@ -3,16 +3,27 @@
 
 #include <vector>
 #include <memory>
+#include <string>
+
+#include "../../Banking_System/include/Bank.hpp"
+#include "../../Banking_System/include/BankExceptions.hpp"
 #include "Product.hpp"
+#include "OnlineMarketplaceExceptions.hpp"
+#include "User.hpp"
 
 class OnlineMarketplace {
     private:
         std::vector<std::shared_ptr<Product>> m_products;
+        std::unique_ptr<std::string> m_cardNumber;
 
     public:
-        //MP = marketplace
-        void addProductToMP(const std::string& name, size_t price, Product::Category category) noexcept;
-        void removeProductFromMP(size_t productId);
+        //OMP = online marketplace
+        void addProductToOMP(const std::string& name, size_t price, Product::Category category) noexcept;
+        void removeProductFromOMP(size_t productId);
+
+        void connectBankCard(Bank& bank, const std::string& CardNumber);
+
+        std::string getCardNumber() const { return *m_cardNumber; }
 
         void displayAllProducts() const;
         void displayCategory(Product::Category category) const;

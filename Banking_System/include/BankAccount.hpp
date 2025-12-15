@@ -6,12 +6,12 @@
 
 class BankAccount {
     public:
-        BankAccount(const std::string& name);
+        explicit BankAccount(const std::string& name);
         BankAccount(const BankAccount&) = delete;
         BankAccount& operator=(const BankAccount&) = delete;
-        BankAccount(BankAccount&& src) noexcept;
-        BankAccount& operator=(BankAccount&& rhs) noexcept;
-        virtual ~BankAccount() {};
+        BankAccount(BankAccount&& src) noexcept = default;
+        BankAccount& operator=(BankAccount&& rhs) noexcept = default;
+        virtual ~BankAccount() = default;
 
         virtual void withdraw(double amount) = 0;
         virtual void deposit(double amount) = 0;
