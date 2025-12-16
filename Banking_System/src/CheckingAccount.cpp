@@ -7,15 +7,11 @@ void CheckingAccount::withdraw(double amount) {
     if (amount < 0) {
         throw NegativeAmount("Can't withdraw negative amount");
     }
-    if (amount > m_balance) {
-        double balanceOverdraft =  m_balance + (m_balance * (m_overdraftLimit / 100));
-        if (amount > balanceOverdraft) {
-            throw InsufficientFunds("Can't withdraw; insufficient funds\n");
-        }
-        m_balance -= balanceOverdraft;
-    } else {
-        m_balance -= amount;
+    double balanceOverdraft =  m_balance + (m_balance * (m_overdraftLimit / 100));
+    if (amount > balanceOverdraft) {
+        throw InsufficientFunds("Can't withdraw; insufficient funds\n");
     }
+    m_balance -= amount;
 }
 
 void CheckingAccount::deposit(double amount) {

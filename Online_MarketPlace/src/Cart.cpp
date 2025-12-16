@@ -15,7 +15,6 @@ void Cart::addProductToCart(OnlineMarketplace& om, size_t productId) {
                                                                             // C++20 added support for aggregate initialization through make_unique and make_shared
         return;
     } catch (const OnlineMarketplaceExceptions& ex) {
-        std::cout << ex.what() << std::endl;
         throw; // rethrow so that user decided what to do with it.
     }
 }
@@ -25,6 +24,7 @@ void Cart::removeProductFromCart(size_t productId) {
         if (auto tmpProduct = m_cart[i]->m_product.lock()) {
             if (tmpProduct->getId() == productId) {
                 m_cart.erase(m_cart.begin() + i);   
+                return;
             }
         }
     }
@@ -48,10 +48,6 @@ void Cart::displayCart() const {
             std::cout << "Quantity: " << m_cart[i]->m_count << "\n";
         }
     }
-}
-
-void Cart::purchaseCart(Bank& bank) {
-    
 }
 
 void Cart::cleanCart() {

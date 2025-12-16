@@ -19,8 +19,8 @@ void OnlineMarketplace::connectBankCard(Bank& bank, const std::string& CardNumbe
         bank.findCardNumber(CardNumber);
         m_cardNumber = std::make_unique<std::string>(CardNumber);
     } catch (const BankExceptions& ex) {
-        std::cout << ex.what() << "\n" 
-                  << "Failed to connect Bank Card\n";
+        std::cout << ex.what() << std::endl;
+        std::cout << "Failed to connect Bank Card\n";
     }
 }
 

@@ -24,15 +24,5 @@ class ProductIdNotFound : public OnlineMarketplaceExceptions {
         ProductIdNotFound(const std::string& msg) : OnlineMarketplaceExceptions { msg } {}
 };
 
-class InsufficientFunds : public OnlineMarketplaceExceptions {
-    public:
-        InsufficientFunds(const std::string& msg) : OnlineMarketplaceExceptions { msg } {}
-};
-
-class NegativeAmount : public OnlineMarketplaceExceptions {
-    public:
-        NegativeAmount(const std::string& msg) : OnlineMarketplaceExceptions { msg } {}
-};
-
 
 #endif

@@ -8,6 +8,7 @@
 #include "../../Banking_System/include/BankExceptions.hpp"
 #include "Cart.hpp"
 #include "OnlineMarketplace.hpp"
+#include "OnlineMarketplaceExceptions.hpp"
 
 class User {
     private:
@@ -28,7 +29,7 @@ class User {
         void removeProductFromCart(size_t productId);
 
         void displayCart() const;
-        void getTotalPriceOfCart() const;
+        double getTotalPriceOfCart() const;
 
         void purchaseCart(Bank& bank, OnlineMarketplace& om);
         void cleanCart();
