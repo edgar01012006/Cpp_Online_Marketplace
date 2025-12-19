@@ -51,66 +51,96 @@ void Bank::display() const {
 }
 
 
-// void Bank::menu() {
-//     int input = 1;
-//     std::string name; // 1, 2
-//     std::string cardNumber1; // 3, 4, 5
-//     std::string cardNumber2; // 5
-//     double amount; // 3, 4, 5
+void Bank::menu() {
+    int input = -1;
+    std::string name;
+    std::string cardNumber1, cardNumber2;
+    double amount;
 
-//     while (input != 0) {
-//         std::cout << "\n0: Exit\n" 
-//                   << "1: create Checking account\n"
-//                   << "2: create Savings account\n"
-//                   << "3: withdraw\n"
-//                   << "4: deposit\n"
-//                   << "5: transfer\n"
-//                   << "6: display all accounts\n\n";
+    while (input != 0) {
+        std::cout << "\n--- Bank Management Menu ---\n"
+                  << "0: Exit to Master Menu\n" 
+                  << "1: Create Checking Account\n"
+                  << "2: Create Savings Account\n"
+                  << "3: Withdraw\n"
+                  << "4: Deposit\n"
+                  << "5: Transfer\n"
+                  << "6: Display All Accounts\n"
+                  << "Your input: ";
+
+        // Basic check to ensure we get a number for the menu
+        if (!(std::cin >> input)) {
+            std::cout << "Invalid input. Please enter a number.\n";
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+            continue;
+        }
         
-//         std::cout << "Your input: "; 
-//         std::cin >> input;
-//         std::cout << "\n";
-//         switch(input) {
-//             case 0:
-//                 return;
-//             case 1:
-//                 std::cout << "Enter the name\n";
-//                 std::cin >> name;
-//                 createCheckingsAccount(name);
-//                 break;
-//             case 2:
-//                 std::cout << "Enter the name\n";
-//                 std::cin >> name;
-//                 createSavingsAccount(name);
-//                 break;
-//             case 3:
-//                 std::cout << "Enter the card number\n";
-//                 std::cin >> cardNumber1;
-//                 std::cout << "Enter the amount\n";         
-//                 std::cin >> amount;
-//                 withdraw(cardNumber1, amount);
-//                 break;
-//             case 4:
-//                 std::cout << "Enter the card number\n";
-//                 std::cin >> cardNumber1;
-//                 std::cout << "Enter the amount\n"; 
-//                 std::cin >> amount;
-//                 deposit(cardNumber1, amount);
-//                 break;
-//             case 5:
-//                 std::cout << "Enter the card number you will transfer from\n";
-//                 std::cin >> cardNumber1;
-//                 std::cout << "Enter the card number you will transfer to\n";
-//                 std::cin >> cardNumber2;
-//                 std::cout << "Enter the amount you would like to transfer\n";
-//                 std::cin >> amount;
-//                 transfer(cardNumber1, cardNumber2, amount);
-//                 break;
-//             case 6:
-//                 display();
-//                 break;
-//             default:
-//                 break;
-//         }
-//     }
-// }
+        std::cout << "\n";
+        
+        // Use a single try-catch block for the whole switch to handle BankExceptions
+        try {
+            switch(input) {
+                case 0:
+                    return;
+
+                case 1:
+                case 2:
+                    std::cout << "Enter the full name for the account: ";
+                    std::cin.ignore(); // Clear the 'Enter' from the menu input
+                    std::getline(std::cin, name); // Now handles spaces in names!
+                    
+                    if (input == 1) createCheckingAccount(name);
+                    else createSavingsAccount(name);
+                    
+                    std::cout << "Account created successfully.\n";
+                    break;
+
+                case 3:
+                    std::cout << "Enter the card number: ";
+                    std::cin >> cardNumber1;
+                    std::cout << "Enter the amount: ";
+                    std::cin >> amount;
+                    withdraw(cardNumber1, amount);
+                    std::cout << "Withdrawal successful.\n";
+                    break;
+
+                case 4:
+                    std::cout << "Enter the card number: ";
+                    std::cin >> cardNumber1;
+                    std::cout << "Enter the amount: ";
+                    std::cin >> amount;
+                    deposit(cardNumber1, amount);
+                    std::cout << "Deposit successful.\n";
+                    break;
+
+                case 5:
+                    std::cout << "Enter source card number: ";
+                    std::cin >> cardNumber1;
+                    std::cout << "Enter destination card number: ";
+                    std::cin >> cardNumber2;
+                    std::cout << "Enter amount to transfer: ";
+                    std::cin >> amount;
+                    transfer(cardNumber1, cardNumber2, amount);
+                    std::cout << "Transfer successful.\n";
+                    break;
+
+                case 6:
+                    display();
+                    break;
+
+                default:
+                    std::cout << "Option not recognized.\n";
+                    break;
+            }
+        } 
+        // This is the magic part! It catches your custom errors 
+        // like InsufficientFunds or AccountNotFound.
+        catch (const BankExceptions& ex) {
+            std::cout << "\n[BANK ERROR]: " << ex.what() << "\n";
+        }
+        catch (const std::exception& ex) {
+            std::cout << "\n[SYSTEM ERROR]: " << ex.what() << "\n";
+        }
+    }
+}

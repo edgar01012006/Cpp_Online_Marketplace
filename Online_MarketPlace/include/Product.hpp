@@ -9,6 +9,7 @@
 class Product {
     public:
         enum class Category { 
+            NONE,
             CLOTHING,
             FURNITURE,
             ELECTRONICS

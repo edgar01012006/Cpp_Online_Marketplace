@@ -24,7 +24,7 @@ class Bank {
 
         void display() const;
 
-        // void menu();
+        void menu();
 
     private:
         BankAccount* findCardAccount(const std::string& cardNumber) const;

@@ -4,11 +4,12 @@
 #include <string>
 #include <memory>
 
-#include "../../Banking_System/include/Bank.hpp"
 #include "../../Banking_System/include/BankExceptions.hpp"
 #include "Cart.hpp"
-#include "OnlineMarketplace.hpp"
 #include "OnlineMarketplaceExceptions.hpp"
+
+class OnlineMarketplace;
+class Bank;
 
 class User {
     private:
@@ -38,6 +39,8 @@ class User {
 
         std::string getName() const { return m_name; }
         size_t getId() const { return m_id; }
+
+        void menu(Bank& bank, OnlineMarketplace& om);
         
 };
 

@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="ieEypDrG3F5grFiOUgpU" name="Page-1">
-        <mxGraphModel dx="1039" dy="1528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1484" dy="1799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -119,6 +119,36 @@
                         <Array as="points">
                             <mxPoint x="905" y="-550"/>
                         </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="67" value="&lt;table border=&quot;1&quot; width=&quot;100%&quot; height=&quot;100%&quot; cellpadding=&quot;4&quot; style=&quot;width:100%;height:100%;border-collapse:collapse;&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th align=&quot;center&quot;&gt;SystemApp&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;font style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;- Bank bank&lt;br&gt;- OnlineMarketplace marketplace&lt;br&gt;- User user&lt;/b&gt;&lt;/font&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;center&quot;&gt;&lt;b&gt;+ displayMasterMenu() const&lt;br&gt;&lt;br&gt;+SystemApp(const string&amp;amp; userName)&lt;br&gt;&lt;br&gt;+ void run()&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=default;overflow=fill;gradientColor=none;fillStyle=auto;" vertex="1" parent="1">
+                    <mxGeometry x="1000" y="-80" width="280" height="270" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="47" target="67">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1050" y="-30" as="sourcePoint"/>
+                        <mxPoint x="960" y="10" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="880" y="-280"/>
+                            <mxPoint x="880" y="55"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="72" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="8" target="67">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="1260" y="-460" as="sourcePoint"/>
+                        <mxPoint x="1420" y="-460" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="645" y="-520"/>
+                            <mxPoint x="930" y="-520"/>
+                            <mxPoint x="930" y="-12"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="34" target="67">
+                    <mxGeometry width="160" relative="1" as="geometry">
+                        <mxPoint x="610" y="-220" as="sourcePoint"/>
+                        <mxPoint x="770" y="-220" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
             </root>

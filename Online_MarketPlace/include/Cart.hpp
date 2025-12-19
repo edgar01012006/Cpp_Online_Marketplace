@@ -5,9 +5,9 @@
 #include <memory>
 
 #include "Product.hpp"
-#include "OnlineMarketplace.hpp"
-#include "User.hpp"
 #include "OnlineMarketplaceExceptions.hpp"
+
+class OnlineMarketplace;
 
 struct QuantityProduct {
     int m_count;

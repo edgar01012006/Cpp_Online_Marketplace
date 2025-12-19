@@ -16,6 +16,8 @@ class OnlineMarketplace {
         std::vector<std::shared_ptr<Product>> m_products;
         std::unique_ptr<std::string> m_cardNumber;
 
+        Product::Category menuForCategory() const;
+
     public:
         //OMP = online marketplace
         void addProductToOMP(const std::string& name, size_t price, Product::Category category) noexcept;
@@ -28,6 +30,8 @@ class OnlineMarketplace {
         void displayAllProducts() const;
         void displayCategory(Product::Category category) const;
         //void displayProductShoppersCount(size_t productId) const;
+
+        void menu(Bank& bank);
 
         const std::shared_ptr<Product>& findProductById(size_t productId) const;
 };
