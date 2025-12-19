@@ -7,55 +7,6 @@ Core operations—like managing bank accounts, marketplace products, and user sh
 ![System Architecture](./UML.svg)
 
 This project includes:
-- **Clear OOP separation** between the Banking System, Online Marketplace, and App Controller
-- **Use of `shared_ptr`, `weak_ptr`, and `unique_ptr`** for memory-safe ownership 
-- **Custom exception handling** for invalid IDs, insufficient funds, and transactions 
-- **Smart shopping list design** using `weak_ptr` aggregation (`QuantityProduct`) 
-- **Unified Master Menu** to bridge the gap between banking administration and user shopping
-
----
-
-## Project Structure
-
-```text
-├── Banking_System/
-│   ├── include/
-│   │   ├── Bank.hpp
-│   │   ├── BankAccount.hpp
-│   │   └── BankExceptions.hpp
-│   └── src/
-│       ├── Bank.cpp
-│       ├── BankAccount.cpp
-│       ├── CheckingAccount.cpp
-│       └── SavingsAccount.cpp
-├── Online_Marketplace/
-│   ├── include/
-│   │   ├── OnlineMarketplace.hpp
-│   │   ├── User.hpp
-│   │   ├── Cart.hpp
-│   │   └── OnlineMarketplaceExceptions.hpp
-│   └── src/
-│       ├── OnlineMarketplace.cpp
-│       ├── User.cpp
-│       ├── Cart.cpp
-│       └── Product.cpp
-├── app/
-│   ├── include/
-│   │   └── SystemApp.hpp
-│   └── src/
-│       ├── SystemApp.cpp
-│       └── main.cpp
-├── UML.svg
-└── README.md
-# 🛒 Integrated Banking & Marketplace System
-
-A comprehensive C++ project implementing an object-oriented **online shopping marketplace** integrated with a **banking system**, managed by a central **System Controller**.  
-Core operations—like managing bank accounts, marketplace products, and user shopping carts—are organized through well-structured classes to keep the system scalable and maintainable.
-
-## 📊 System Architecture
-![System Architecture](./UML.svg)
-
-This project includes:
 - **Clear OOP separation** between the Banking System, Online Marketplace, and App Controller.
 - **Use of `shared_ptr`, `weak_ptr`, and `unique_ptr`** for memory-safe ownership.
 - **Custom exception handling** for invalid IDs, insufficient funds, and transactions.
@@ -64,7 +15,7 @@ This project includes:
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
 ```text
 ├── Banking_System/
@@ -100,7 +51,7 @@ This project includes:
 
 ---
 
-## Build & Run
+## 🛠️ Build & Run
 
 The project requires a compiler with **C++20** support.
 
@@ -116,7 +67,7 @@ g++ -std=c++20 app/src/main.cpp app/src/SystemApp.cpp Banking_System/src/Bank.cp
 g++ -std=c++20 app/src/main.cpp app/src/SystemApp.cpp Banking_System/src/*.cpp Online_Marketplace/src/*.cpp -I Banking_System/include -I Online_Marketplace/include -I app/include -o final_app
 ```
 
-### Run the Program
+### 🚀 Run the Program
 
 ```bash
 # Windows
