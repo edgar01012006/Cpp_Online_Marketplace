@@ -11,9 +11,12 @@ void Cart::addProductToCart(OnlineMarketplace& om, size_t productId) {
         }
     }   
     try {
-        const std::shared_ptr<Product>& product = om.findProductById(productId);
-        m_cart.emplace_back(std::make_unique<QuantityProduct>(1, product)); // add a new product into shopping list
-                                                                            // C++20 added support for aggregate initialization through make_unique and make_shared
+        const std::shared_ptr<Product>& product = om.findProductById(productId); 
+        m_cart.emplace_back(std::make_unique<QuantityProduct>(1, product)); 
+        // std::make_uniqueը փորձումա կանչի QuantityProductի  parametric ctorը որը չկա սահմանած
+        // եթե մտածել ես որ QuantityProductը aggregate classա ճիշտա, բայց aggregate classերը պետքա սենց արժեքավորել QuantityProduct{1, product};
+        // լուծում կլինի paramatric ctor սահմանելը, կամ սենց ինչ որ բան գրելը std::make_unique<QuantityProduct>(QuantityProduct{1, product});
+
         return;
     } catch (const OnlineMarketplaceExceptions& ex) {
         throw; // rethrow so that user decided what to do with it.
