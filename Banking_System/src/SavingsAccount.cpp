@@ -1,4 +1,4 @@
-#include "../include/SavingsAccount.hpp"
+#include "SavingsAccount.hpp"
 
 SavingsAccount::SavingsAccount(const std::string& name, double interestRate) 
     : BankAccount { name }, m_interestRate { interestRate } {}

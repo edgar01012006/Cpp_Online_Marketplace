@@ -3,9 +3,9 @@
 
 #include <string>
 
-#include "../../Banking_System/include/Bank.hpp"
-#include "../../Online_Marketplace/include/OnlineMarketplace.hpp"
-#include "../../Online_Marketplace/include/User.hpp"
+#include "Bank.hpp"
+#include "OnlineMarketplace.hpp"
+#include "User.hpp"
 
 class SystemApp {
     private:

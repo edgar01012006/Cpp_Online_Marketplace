@@ -1,4 +1,4 @@
-#include "../include/BankAccount.hpp"
+#include "BankAccount.hpp"
 
 long long int BankAccount::m_cardNumberCounter = 1000'0000'0000'0000;
 

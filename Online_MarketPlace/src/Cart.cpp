@@ -1,5 +1,5 @@
-#include "../include/Cart.hpp"
-#include "../include/OnlineMarketplace.hpp"
+#include "Cart.hpp"
+#include "OnlineMarketplace.hpp"
 
 void Cart::addProductToCart(OnlineMarketplace& om, size_t productId) {
     for (int i = 0; i < m_cart.size(); ++i) { // search if product exists in shopping list

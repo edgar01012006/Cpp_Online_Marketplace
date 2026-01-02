@@ -1,4 +1,4 @@
-#include "../include/OnlineMarketplace.hpp"
+#include "OnlineMarketplace.hpp"
 
 void OnlineMarketplace::addProductToOMP(const std::string& name, size_t price, Product::Category category) noexcept {
     m_products.emplace_back(std::make_shared<Product>(name, price, category));

@@ -5,8 +5,8 @@
 #include <memory>
 #include <string>
 
-#include "../../Banking_System/include/Bank.hpp"
-#include "../../Banking_System/include/BankExceptions.hpp"
+#include "Bank.hpp"
+#include "BankExceptions.hpp"
 #include "Product.hpp"
 #include "OnlineMarketplaceExceptions.hpp"
 #include "User.hpp"

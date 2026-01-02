@@ -1,4 +1,4 @@
-#include "../include/Bank.hpp"
+#include "Bank.hpp"
 
 void Bank::withdraw(const std::string& cardNumber, double amount) {
     BankAccount* bankAccount = findCardAccount(cardNumber);

@@ -1,4 +1,4 @@
-#include "../include/Product.hpp"
+#include "Product.hpp"
 
 size_t Product::m_nextId = 0;
 

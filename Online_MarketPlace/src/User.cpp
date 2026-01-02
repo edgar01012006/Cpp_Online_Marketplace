@@ -1,6 +1,6 @@
-#include "../include/User.hpp"
-#include "../include/OnlineMarketplace.hpp"
-#include "../../Banking_System/include/Bank.hpp"
+#include "User.hpp"
+#include "OnlineMarketplace.hpp"
+#include "Bank.hpp"
 
 size_t User::m_nextId = 0;
 

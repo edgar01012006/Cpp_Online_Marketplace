@@ -1,4 +1,4 @@
-#include "../include/CheckingAccount.hpp"
+#include "CheckingAccount.hpp"
 
 CheckingAccount::CheckingAccount(const std::string& name, double overdraftLimit)
     : BankAccount { name }, m_overdraftLimit { overdraftLimit } {} 

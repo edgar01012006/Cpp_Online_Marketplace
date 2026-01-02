@@ -4,7 +4,7 @@
 #include <string>
 #include <memory>
 
-#include "../../Banking_System/include/BankExceptions.hpp"
+#include "BankExceptions.hpp"
 #include "Cart.hpp"
 #include "OnlineMarketplaceExceptions.hpp"
 

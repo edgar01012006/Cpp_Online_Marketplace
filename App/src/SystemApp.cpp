@@ -1,4 +1,4 @@
-#include "../include/SystemApp.hpp"
+#include "SystemApp.hpp"
 #include <iostream>
 #include <limits>
 
